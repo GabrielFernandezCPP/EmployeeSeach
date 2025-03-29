@@ -20,4 +20,15 @@ PtrToEmployee searchEmployeeByName(PtrToConstEmployee ptr, int tableSize, char *
             return (PtrToEmployee) ptr; 
     } 
     return NULL; 
-} 
+}
+
+PtrToEmployee searchEmployeeByPhoneNumber(PtrToConstEmployee ptr, int tableSize, char * targetPNumber) {
+    const PtrToConstEmployee endPtr = ptr + tableSize; //If we go beyond this point the program will crash
+
+    for (; ptr < endPtr; ptr++)
+    {
+        if (strcmp(ptr->phone, targetPNumber) == 0) return (PtrToEmployee) ptr;
+    }
+
+    return NULL;
+}
