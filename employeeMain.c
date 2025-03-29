@@ -18,15 +18,19 @@ int main(void){
     PtrToEmployee matchPtr;  //Declaration 
     matchPtr = searchEmployeeByNumber(EmployeeTable, EmployeeTableEntries, 1045); 
 
+    //printf("%d\n", EmployeeTable);
     //Example not found 
     if (matchPtr != NULL) 
         printf("Employee ID 1045 is in record %d\n", matchPtr - EmployeeTable); 
     else 
         printf("Employee ID is NOT found in the record\n"); 
 
-    //Example found 
+    //Example found
+    matchPtr = NULL;
     matchPtr = searchEmployeeByName(EmployeeTable, EmployeeTableEntries, "Tony Bobcat"); 
 
+    //printf("%d\n", EmployeeTable);
+    //printf("%d\n", matchPtr);
     if (matchPtr != NULL) 
         printf("Employee Tony Bobcat is in record %d\n", matchPtr - EmployeeTable); 
     else 
@@ -34,6 +38,7 @@ int main(void){
 
     //QUIZ STUFF//
     //Example found. P#
+    matchPtr = NULL;
     matchPtr = searchEmployeeByPhoneNumber(EmployeeTable, EmployeeTableEntries, "213-555-1212"); 
 
     //printf("%d\n", EmployeeTable);
@@ -45,6 +50,7 @@ int main(void){
         printf("Employee Phone #: 213-555-1212 is NOT found in the record\n");
 
     //Example not found. P#
+    matchPtr = NULL;
     matchPtr = searchEmployeeByPhoneNumber(EmployeeTable, EmployeeTableEntries, "626-555-1212");
 
     if (matchPtr != NULL) 
@@ -52,9 +58,10 @@ int main(void){
     else 
         printf("Employee Phone #: 626-555-1212 is NOT found in the record\n");
 
-
+    //printf("%d\n", EmployeeTable);
     //Example found. Sal
     double salaryT = 8.32;
+    matchPtr = NULL;
     matchPtr = searchEmployeeBySalary(EmployeeTable, EmployeeTableEntries, salaryT); 
 
     //printf("%d\n", EmployeeTable);
@@ -66,6 +73,7 @@ int main(void){
         printf("Employee Salary: 8.32 is NOT found in the record\n");
 
     //Example not found. Sal
+    matchPtr = NULL;
     matchPtr = searchEmployeeBySalary(EmployeeTable, EmployeeTableEntries, salaryT + 1.0);
 
     if (matchPtr != NULL) 
