@@ -36,13 +36,16 @@ int main(void){
     //Example found. P#
     matchPtr = searchEmployeeByPhoneNumber(EmployeeTable, EmployeeTableEntries, "213-555-1212"); 
 
+    //printf("%d\n", EmployeeTable);
+    //printf("%d\n", matchPtr);
+
     if (matchPtr != NULL) 
         printf("Employee Phone #: 213-555-1212 is in record %d\n", matchPtr - EmployeeTable); 
     else 
         printf("Employee Phone #: 213-555-1212 is NOT found in the record\n");
 
     //Example not found. P#
-    matchPtr = searchEmployeeByPhoneNumber(EmployeeTable, EmployeeTableEntries, "626-555-1212"); 
+    matchPtr = searchEmployeeByPhoneNumber(EmployeeTable, EmployeeTableEntries, "626-555-1212");
 
     if (matchPtr != NULL) 
         printf("Employee Phone #: 626-555-1212 is in record %d\n", matchPtr - EmployeeTable); 
