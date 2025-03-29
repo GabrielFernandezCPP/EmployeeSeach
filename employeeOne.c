@@ -32,3 +32,14 @@ PtrToEmployee searchEmployeeByPhoneNumber(PtrToConstEmployee ptr, int tableSize,
 
     return NULL;
 }
+
+PtrToEmployee searchEmployeeBySalary(PtrToConstEmployee ptr, int tableSize, double salary) {
+    const PtrToConstEmployee endPtr = ptr + tableSize; //If we go beyond this point the program will crash
+
+    for (; ptr < endPtr; ptr++)
+    {
+        if (ptr->salary == salary) return (PtrToEmployee) ptr;
+    }
+
+    return NULL;
+}
